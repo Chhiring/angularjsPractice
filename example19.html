@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html ng-app='App'>
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Example</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+
+		<!-- building the table -->
+		<script type="text/javascript">
+			var countryApp = angular.module('App', []);
+			countryApp.controller('countryCtrl', function($scope){
+				$scope.countries = [
+						{ "name" : "China", "population" : 1233552151521},
+						{"name" : "nepal", "population" : 2301255322},
+						{"name" : "india", "population" : 12413513131},
+						{"name" : "United States America" , "population" : 15134651351351}
+				];
+			});
+		</script>
+		
+	</head>
+	<body ng-controller="countryCtrl">
+		<table class="table table-bordered table-striped table-hover">
+			<tr>
+				<th>Country </th>
+				<th>Population</th>
+			</tr>
+			<tr ng-repeat="country in countries">
+				<td>{{country.name}}</td>
+				<td>{{country.population}}</td>
+			</tr>
+		</table>
+	</body>
+</html>

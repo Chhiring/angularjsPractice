@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+	<html ng-app='App'>
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Example</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+		<!--changing scope value asynchronously updates don't propagate without .apply() -->
+		<script >
+			var nameApp = angular.module('App', []);
+			nameApp.controller('NameCtrl', function($scope){
+				$scope.FirstName = 'Chhiring';				
+				$scope.LastName = 'Gurung';
+			});
+		</script>
+	</head>
+	<body ng-controller="NameCtrl">
+		First Name: <input type="text"  ng-model="FirstName" /><br>
+		Last Name: <input type="text"  ng-model="LastName" /><br>		
+		Hello {{FirstName}} {{LastName}}
+	</body>
+</html>
